@@ -485,7 +485,8 @@ class EditableState extends State<Editable> {
                   children: _tableHeaders()),
             ),
 
-            Expanded(
+            Flex(
+              direction: Axis.vertical,
               child: SingleChildScrollView(
                 child: Column(
                   children: _tableRows(),
