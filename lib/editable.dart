@@ -487,11 +487,11 @@ class EditableState extends State<Editable> {
 
             Flex(
               direction: Axis.vertical,
-              child: SingleChildScrollView(
+              children: [SingleChildScrollView(
                 child: Column(
                   children: _tableRows(),
                 ),
-              ),
+              )],
             )
           ]),
         ),
