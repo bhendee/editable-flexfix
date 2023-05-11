@@ -1,5 +1,8 @@
 # Editable
 
+This fork replaces a single Expanded widget with a roughly equivalent Flex widget because the original version kept crashing for me.
+There may be implications for functionality.
+
 ⚡️A highly customizable, editable table package for Flutter projects.
 
 ### Specs
