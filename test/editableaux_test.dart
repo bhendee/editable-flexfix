@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:editable/editable.dart';
+import 'package:editableaux/editableaux.dart';
 
 void main() {
   test('adds one row to table', () {
