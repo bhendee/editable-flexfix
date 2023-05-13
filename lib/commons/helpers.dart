@@ -24,8 +24,8 @@ rowBlueprint(int rowCount, columns, rows) {
 }
 
 /// adds a row to existing row lists
-addOneRow(columns, rows) {
-  var item = {};
+addOneRow(List<Map<String, dynamic>> columns, List<Map<String, dynamic>> rows) {
+  Map<String, dynamic> item = {};
   columns.forEach((element) {
     item[element['key']] = '';
   });
