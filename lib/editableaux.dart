@@ -312,7 +312,11 @@ class EditableState extends State<Editable> {
 
   ///Create a row after the last row
   createRow() => addOneRow(columns, rows);
-  EditableState({required this.rows, required this.columns, this.columnCount, this.rowCount});
+  EditableState(
+      {required this.rows,
+      required this.columns,
+      this.columnCount,
+      this.rowCount});
 
   /// Temporarily holds all edited rows
   List _editedRows = [];
@@ -321,13 +325,11 @@ class EditableState extends State<Editable> {
   Widget build(BuildContext context) {
     /// initial Setup of columns and row, sets count of column and row
     rowCount = rows.isEmpty ? widget.rowCount : rows.length;
-    columnCount =
-        columns.isEmpty ? columnCount : columns.length;
+    columnCount = columns.isEmpty ? columnCount : columns.length;
     columns = columns;
     rows = rows;
 
     /// Builds save snd remove Icons widget
-
 
     Widget _removeSaveIcons(index) {
       return Row(
@@ -471,32 +473,36 @@ class EditableState extends State<Editable> {
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child:
-              Column(crossAxisAlignment: widget.createButtonAlign, children: [
-            //Table Header
-            createButton(),
-            Container(
-              padding: EdgeInsets.only(bottom: widget.thPaddingBottom),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                          color: widget.borderColor,
-                          width: widget.borderWidth))),
-              child: Row(
-                  crossAxisAlignment: widget.thVertAlignment,
-                  mainAxisSize: MainAxisSize.min,
-                  children: _tableHeaders()),
-            ),
+                Row(crossAxisAlignment: widget.createButtonAlign, children: [
+                    createButton(),
+                    Column(children: [
+                        //Table Header
+                        Container(
+                        padding: EdgeInsets.only(bottom: widget.thPaddingBottom),
+                        decoration: BoxDecoration(
+                            border: Border(
+                                bottom: BorderSide(
+                                    color: widget.borderColor,
+                                    width: widget.borderWidth))),
+                        child: Row(
+                            crossAxisAlignment: widget.thVertAlignment,
+                            mainAxisSize: MainAxisSize.min,
+                            children: _tableHeaders()),
+                        ),
 
-            Flex(
-              direction: Axis.vertical,
-              children: [SingleChildScrollView(
-                child: Column(
-                  children: _tableRows(),
-                ),
-              )],
-            )
-          ]),
-        ),
+                        Flex(
+                        direction: Axis.vertical,
+                        children: [
+                            SingleChildScrollView(
+                            child: Column(
+                                children: _tableRows(),
+                            ),
+                            )
+                            ],
+                        )
+                    ]),
+                ]),
+            ),
       ),
     );
   }
