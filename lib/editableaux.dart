@@ -512,7 +512,7 @@ class EditableState extends State<Editable> {
     return Visibility(
       visible: widget.showCreateButton,
       child: Padding(
-        padding: EdgeInsets.only(left: 4.0, bottom: 4),
+        padding: EdgeInsets.only(right: 4.0, bottom: 4),
         child: InkWell(
           onTap: () {
             rows = addOneRow(columns, rows);
